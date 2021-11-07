@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700&display=swap');
+
+* {
+    font-family: 'Roboto Slab';
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(36, 36, 36);
+    margin: 0;
+}
+
+//navigation start
+
+nav {
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(34, 34, 34, 0.7);
+    .container {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    z-index: 10000;
+}
+
+.modal {
+    background-color:rgb(36, 36, 36);
+    justify-content: center;
+    align-content: center;
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        list-style: none;
+        gap: 20px;
+    }
+
+    &__item {
+        a {
+            color: whitesmoke;
+            text-decoration: none;
+        }
+    }
+
+    &__open {
+        border: none;
+        background: transparent;
+    }
+
+    &__close {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        color: whitesmoke;
+        border: none;
+        background-color: transparent;
+    }
+}
+
+.modalshow {
+    display: flex;
+}
+
+.left {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+
+    .home {
+        display: inline-flex;
+    }
+
+    &__button {
+        display: none;
+    }
+
+    &__item {
+        display: inline-flex;
+        align-content: stretch;
+        align-items: center;
+        list-style: none;
+        padding: 0 8px;
+        height: 100%;
+        transition: all .3s;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
+
+    &__link{
+        color: whitesmoke;
+        text-decoration: none;
+        font-size: 16pt;
+        img {
+            height: 100%;
+        }
+
+        &:hover {
+            color: whitesmoke;
+        }
+    }
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    &__item {
+        list-style: none;
+        padding: 4px 8px;
+        // height: 100%;
+        transition: all .3s;
+    }
+
+    .soc {
+        padding: 0 14px;
+        svg{
+            fill: whitesmoke;
+            transform: scale(1.5);
+        }
+
+        &:nth-child(1) {
+            &:hover{
+                background-color: rgb(193, 53, 132);
+            }
+        }
+
+        &:nth-child(2) {
+            &:hover{
+                background-color: rgb(66, 103, 178);
+            }
+        }
+    }
+
+    .carticon {
+        border: 1px solid whitesmoke;
+        border-radius: 50px;
+        button {
+            font-size: 16px;
+            line-height: 16px;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+        }
+    }
+
+    .tel {
+        border: 1px solid whitesmoke;
+        border-radius: 20px;
+        a {
+            color: whitesmoke;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all .3s;
+        }
+
+        &:hover {
+            background-color: whitesmoke;
+            a {
+                color: black;
+            }
+        }
+    }
+}
+
+.phone-icon {
+    display: none;
+}
+
+.cart {
+    background-color: rgb(32, 39, 39);
+    color: whitesmoke;
+    height: 90vh;
+    width: 100vw;
+    display: none;
+
+    &__list {
+        height: 50%;
+        overflow-y: scroll;
+        margin-bottom: 22px;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        padding: 12px;
+        margin-bottom: 10px;
+        border: 2px solid whitesmoke;
+        border-radius: 20px;
+
+        button {
+            background-color: transparent;
+            color: whitesmoke;
+            border: 1px solid whitesmoke;
+            border-radius: 50%;
+        }
+    }
+
+    &__image {
+        width: 80px;
+        height: 80px;
+        img {
+            width: 100%;
+        }
+    }
+
+    &__check {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.cartshow {
+    display: block;
+}
+
+//navigation end
+
+//header start
+
+.heading {
+    padding-top: 60px;
+    height: 100vh;
+    background-image: url('../img/pizza-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 60px;
+}
+
+.big-logo {
+    img {
+        width: 100%;
+    }
+    margin: 20px 0;
+}
+
+.headtext {
+    color: whitesmoke;
+    font-size: 24pt;
+    text-align: center;
+}
+
+//header end
+
+//home menu start
+
+.main {
+    background-image: url('../img/logo-background.png');
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.dishcard {
+    border: 2px whitesmoke solid;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    color: whitesmoke;
+    &__image {
+        position: relative;
+        img{
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        &:hover {
+            .dishcard__overlay {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__text {
+        padding: 10px;
+        color: whitesmoke;
+        .money {
+            display: flex;
+            flex-direction: column;
+            
+            .size, .price {
+                display: flex;
+                p {
+                    flex-grow: 1;
+                }
+            }
+        }
+    }
+
+    &__buy {
+        padding: 0 12px;
+    }
+}
+
+.buy {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__size {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    &__add {
+        border: none;
+        background-color: tomato;
+        color: whitesmoke;
+        border-radius: 10px;
+        transition: .5s all;
+        
+        &:hover {
+            background-color: rgb(190, 71, 50);
+
+
+            .rotate {
+                transform: rotate(1turn);
+            }
+        }
+    }
+}
+
+.rotate {
+    margin-right: 4px;
+    transition: transform .8s linear;
+}
