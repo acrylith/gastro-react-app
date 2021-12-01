@@ -5,12 +5,18 @@ const varesList = {
         name: 'Салямі',
         image: './img/pizza-card.jpg',
         contain: 'Томати пелаті, моцарела, подвійна салямі',
-        sSize: '32см.',
-        sWeight: 520,
-        sPrice: 124,
-        mSize: '45см.',
-        mWeight: 1040,
-        mPrice: 245
+        caliber: {
+            s: {
+                size: '32см.',
+                weight: 520,
+                price: 124
+            },
+            m: {
+                size: '45см.',
+                weight: 1040,
+                price: 245
+            }
+        }
     },
 
     vare2: {
@@ -18,12 +24,18 @@ const varesList = {
         name: 'Прошуто',
         image: './img/pizza-card.jpg',
         contain: 'Вершковий соус, моцарела, шинка, печериці',
-        sSize: '32см.',
-        sWeight: 520,
-        sPrice: 127,
-        mSize: '45см.',
-        mWeight: 1040,
-        mPrice: 251
+        caliber: {
+            s: {
+                size: '32см.',
+                weight: 520,
+                price: 127
+            },
+            m: {
+                size: '45см.',
+                weight: 1040,
+                price: 251
+            }
+        }
     },
 
     vare3: {
@@ -31,12 +43,18 @@ const varesList = {
         name: 'Маргарита',
         image: './img/pizza-card.jpg',
         contain: 'Томати пелаті, моцарела, пармезан, свіжий базилік, трюфельна оливкова олія',
-        sSize: '32см.',
-        sWeight: 485,
-        sPrice: 131,
-        mSize: '45см.',
-        mWeight: 970,
-        mPrice: 259
+        caliber: {
+            s: {
+                size: '32см.',
+                weight: 485,
+                price: 131
+            },
+            m: {
+                size: '45см.',
+                weight: 970,
+                price: 259
+            }
+        }
     },
 
     vare4: {
@@ -44,12 +62,18 @@ const varesList = {
         name: 'Гавайська',
         image: './img/pizza-card.jpg',
         contain: 'Вершковий соус, моцарела, ананас, курка, кукурудза',
-        sSize: '32см.',
-        sWeight: 560,
-        sPrice: 136,
-        mSize: '45см.',
-        mWeight: 1120,
-        mPrice: 269
+        caliber: {
+            s: {
+                size: '32см.',
+                weight: 560,
+                price: 136
+            },
+            m: {
+                size: '45см.',
+                weight: 1120,
+                price: 269
+            }
+        }
     },
 
     vare5: {
@@ -57,12 +81,18 @@ const varesList = {
         name: 'Пепероні',
         image: './img/pizza-card.jpg',
         contain: 'Томати пелаті, моцарела, подвійна салямі пепероні',
-        sSize: '32см.',
-        sWeight: 560,
-        sPrice: 136,
-        mSize: '45см.',
-        mWeight: 1120,
-        mPrice: 269
+        caliber: {
+            s: {
+                size: '32см.',
+                weight: 560,
+                price: 136
+            },
+            m: {
+                size: '45см.',
+                weight: 1120,
+                price: 269
+            }
+        }
     },
 
     vare6: {
@@ -70,12 +100,18 @@ const varesList = {
         name: 'Вегетеріана',
         image: './img/pizza-card.jpg',
         contain: 'Томати пелаті, моцарела, печериці, оливки, солодкий перець, рукола',
-        sSize: '32см.',
-        sWeight: 560,
-        sPrice: 136,
-        mSize: '45см.',
-        mWeight: 1120,
-        mPrice: 269
+        caliber: {
+            s: {
+                size: '32см.',
+                weight: 560,
+                price: 136
+            },
+            m: {
+                size: '45см.',
+                weight: 1120,
+                price: 269
+            }
+        }
     },
 
     vare7: {
@@ -83,12 +119,18 @@ const varesList = {
         name: 'Діабола',
         image: './img/pizza-card.jpg',
         contain: 'Томати пелаті, моцарелла, салямі пепероні, перець чилі, оливки, синя цибуля',
-        sSize: '32см.',
-        sWeight: 570,
-        sPrice: 151,
-        mSize: '45см.',
-        mWeight: 1140,
-        mPrice: 299
+        caliber: {
+            s: {
+                size: '32см.',
+                weight: 570,
+                price: 151
+            },
+            m: {
+                size: '45см.',
+                weight: 1140,
+                price: 299
+            }
+        }
     },
 
     vare8: {
@@ -96,12 +138,18 @@ const varesList = {
         name: 'Кальцоне',
         image: './img/pizza-card.jpg',
         contain: 'Вершковий соус, моцарела, шинка, печериці, томати',
-        sSize: '32см.',
-        sWeight: 560,
-        sPrice: 147,
-        mSize: '45см.',
-        mWeight: 1120,
-        mPrice: 291
+        caliber: {
+            s: {
+                size: '32см.',
+                weight: 560,
+                price: 147
+            },
+            m: {
+                size: '45см.',
+                weight: 1120,
+                price: 291
+            }
+        }
     },
 
     vare9: {
@@ -109,12 +157,18 @@ const varesList = {
         name: 'Провінціа',
         image: './img/pizza-card.jpg',
         contain: 'Вершковий соус, моцарела, баварські ковбаски, огірки корнішони, помідори чері',
-        sSize: '32см.',
-        sWeight: 560,
-        sPrice: 136,
-        mSize: '45см.',
-        mWeight: 1120,
-        mPrice: 269
+        caliber: {
+            s: {
+                size: '32см.',
+                weight: 560,
+                price: 136
+            },
+            m: {
+                size: '45см.',
+                weight: 1120,
+                price: 269
+            }
+        }
     },
 
     vare10: {
@@ -122,12 +176,18 @@ const varesList = {
         name: 'Сет Макі',
         image: './img/sushi-card.jpg',
         contain: 'Макі лосось, макі вугор, макі креветка, макі краб, макі авокадо, макі огірок',
-        sSize: '18шт.',
-        sWeight: 330,
-        sPrice: 190,
-        mSize: '36шт.',
-        mWeight: 665,
-        mPrice: 381
+        caliber: {
+            s: {
+                size: '18шт.',
+                weight: 330,
+                price: 190
+            },
+            m: {
+                size: '36шт.',
+                weight: 665,
+                price: 381
+            }
+        }
     },
 
     vare11: {
@@ -135,12 +195,18 @@ const varesList = {
         name: 'Сет Соло',
         image: './img/sushi-card.jpg',
         contain: 'Філадельфія рейнбоу, макі краб, нігірі вугор, нігірі лосось, нігірі креветка',
-        sSize: '9шт.',
-        sWeight: 250,
-        sPrice: 200,
-        mSize: '18шт.',
-        mWeight: 500,
-        mPrice: 400
+        caliber: {
+            s: {
+                size: '9шт.',
+                weight: 250,
+                price: 200
+            },
+            m: {
+                size: '18шт.',
+                weight: 500,
+                price: 400
+            }
+        }
     },
 
     vare12: {
@@ -148,12 +214,18 @@ const varesList = {
         name: 'Сет Лосось',
         image: './img/sushi-card.jpg',
         contain: 'Філадельфія лосось, макі лосось, нігірі лосось х2',
-        sSize: '9шт.',
-        sWeight: 270,
-        sPrice: 210,
-        mSize: '18шт.',
-        mWeight: 540,
-        mPrice: 420
+        caliber: {
+            s: {
+                size: '9шт.',
+                weight: 270,
+                price: 210
+            },
+            m: {
+                size: '18шт.',
+                weight: 540,
+                price: 420
+            }
+        }
     },
 
     vare13: {
@@ -161,12 +233,18 @@ const varesList = {
         name: 'Сет Спайсі',
         image: './img/sushi-card.jpg',
         contain: 'Футо спайсі, філадельфія лайт, макі креветка, гункан лосось спайсі х2',
-        sSize: '12шт.',
-        sWeight: 315,
-        sPrice: 240,
-        mSize: '24шт.',
-        mWeight: 630,
-        mPrice: 480
+        caliber: {
+            s: {
+                size: '12шт.',
+                weight: 315,
+                price: 240
+            },
+            m: {
+                size: '24шт.',
+                weight: 630,
+                price: 480
+            }
+        }
     },
 
     vare14: {
@@ -174,12 +252,18 @@ const varesList = {
         name: 'Сет Нью-Йорк',
         image: './img/sushi-card.jpg',
         contain: 'Філадельфія мікс, каліфорнія креветка, кунжут, запечений краб',
-        sSize: '12шт.',
-        sWeight: 400,
-        sPrice: 300,
-        mSize: '24шт.',
-        mWeight: 800,
-        mPrice: 600
+        caliber: {
+            s: {
+                size: '12шт.',
+                weight: 300,
+                price: 240
+            },
+            m: {
+                size: '24шт.',
+                weight: 800,
+                price: 600
+            }
+        }
     },
 
     vare15: {
@@ -187,12 +271,18 @@ const varesList = {
         name: 'Сет Інь-Янь',
         image: './img/sushi-card.jpg',
         contain: 'Філадельфія лосось, філадельфія вугор, нігірі лосось х2, нігірі вугор х2',
-        sSize: '10шт.',
-        sWeight: 360,
-        sPrice: 330,
-        mSize: '20шт.',
-        mWeight: 720,
-        mPrice: 660
+        caliber: {
+            s: {
+                size: '10шт.',
+                weight: 360,
+                price: 330
+            },
+            m: {
+                size: '20шт.',
+                weight: 720,
+                price: 660
+            }
+        }
     },
 }
 

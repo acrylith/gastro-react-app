@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import Menulist from '../components/MenuList';
+import Varefilters from '../components/VareFilters';
 
-class Menu extends Component {
-    render() {
+const Menu = () => {
+    let[filterValue, filterUpdate] = useState('pizza')
+
         return (
             <div>
-                Menu
+                <Varefilters filterUpdate={filterUpdate}/>
+                <Menulist filter={filterValue}/>
             </div>
         );
-    }
 }
 
 export default Menu;

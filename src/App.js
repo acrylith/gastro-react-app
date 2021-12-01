@@ -13,10 +13,6 @@ import Contacts from './pages/Contacts';
 import Navbar from './components/Navbar';
 
 class App extends React.Component {
-  state = {
-    order: {}
-  };
-
   render() {
     return (
       <Router>

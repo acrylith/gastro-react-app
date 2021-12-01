@@ -1,16 +1,17 @@
-import React, { useState, useContext } from 'react';
+import React, {useContext} from 'react';
+
 import {
     Container,
     Row
 } from 'react-bootstrap';
-
-import headVares from '../headvares'
-import OrderContext from '../context';
-
 import Vare from './Vare';
 
-const Headinglist = (props) => {
-    let[vares] = useState(headVares);
+import varesList from '../vares';
+
+import OrderContext from '../context';
+
+const Menulist = (props) => {
+    let vares = varesList;
     const cntxt = useContext(OrderContext);
 
     const addToOrder = (key) => {
@@ -20,16 +21,19 @@ const Headinglist = (props) => {
     }
 
     return (
-        <section className="main">
+        <section className="vares-screen">
             <Container>
                 <Row className="justify-content-center flex-wrap">
-                    {Object.keys(vares).map(key => {
+                {// eslint-disable-next-line
+                Object.keys(vares).map(key => {
+                    if(vares[key].type === props.filter){
                         return <Vare key={key} index={key} addtoorder={addToOrder} details={vares[key]} />
-                    })}
+                    }
+                })}
                 </Row>
             </Container>
         </section>
     );
 }
 
-export default Headinglist;
+export default Menulist;

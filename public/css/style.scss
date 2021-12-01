@@ -29,6 +29,8 @@ nav {
     background-color:rgb(36, 36, 36);
     justify-content: center;
     align-content: center;
+    display: flex !important;
+    z-index: 11000 !important;
 
     &__menu {
         display: flex;
@@ -177,13 +179,17 @@ nav {
 .cart {
     background-color: rgb(32, 39, 39);
     color: whitesmoke;
-    height: 90vh;
-    width: 100vw;
-    display: none;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    // display: none;
+    z-index: 11000;
 
     &__list {
-        height: 50%;
+        height: 400px;
         overflow-y: scroll;
+        margin-top: 28px;
         margin-bottom: 22px;
     }
 
@@ -217,10 +223,15 @@ nav {
         display: flex;
         justify-content: space-between;
     }
-}
 
-.cartshow {
-    display: block;
+    &__close {
+        position: relative;
+        top: 16px;
+        left: 16px;
+        background-color: transparent;
+        color: whitesmoke;
+        border: none;
+    }
 }
 
 //navigation end
@@ -354,4 +365,25 @@ nav {
 .rotate {
     margin-right: 4px;
     transition: transform .8s linear;
+}
+
+.filter {
+    padding-top: 60px;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    &__button {
+        color: whitesmoke;
+        background-color: transparent;
+        border: 1px solid white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        svg {
+            margin-right: 8px;
+        }
+    }
 }
