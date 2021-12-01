@@ -17,7 +17,7 @@ const Vare = (props) => {
                             <p>{props.details.contain}</p>
                             <div className="money">
                                 <div className="size">
-                                    <p>{props.details.caliber.s.size} ({props.details.caliber.s.weight}гр.)</p>
+                                    <p>{props.details.size} ({props.details.weight}гр.)</p>
                                 </div>
                             </div>
                         </div>
@@ -27,7 +27,7 @@ const Vare = (props) => {
                     <h4>{props.details.name}</h4>
                     <div className="buy__wrapper">
                         <div className="buy__size">
-                            <p>₴{props.details.caliber.s.price}</p>
+                            <p>₴{props.details.price}</p>
                             <button className="buy__add" onClick={() => {props.addtoorder(props.index);}}><span className="rotate">+</span>В кошик</button>
                         </div>
                     </div>

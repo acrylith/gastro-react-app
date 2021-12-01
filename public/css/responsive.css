@@ -32,4 +32,8 @@
   .headtext {
     font-size: 18px;
   }
+
+  .cart__list {
+    max-height: 300px;
+  }
 }

@@ -6,18 +6,18 @@ import {
 } from 'react-bootstrap';
 import Vare from './Vare';
 
-import varesList from '../vares';
-
 import OrderContext from '../context';
 
 const Menulist = (props) => {
-    let vares = varesList;
-    const cntxt = useContext(OrderContext);
+    const {orders, vare} = useContext(OrderContext);
+    const {order, setOrder} = orders;
+    // eslint-disable-next-line
+    const {vares, setVares} = vare;
 
     const addToOrder = (key) => {
-        const order = {...cntxt.order};
-        order[key] = order[key] + 1 || 1;
-        cntxt.setOrder(order);
+        const tempOrder = {...order};
+        tempOrder[key] = tempOrder[key] + 1 || 1;
+        setOrder(tempOrder);
     }
 
     return (

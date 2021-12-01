@@ -1,0 +1,168 @@
+{
+    "vares": [
+        {
+            "id": "vare1",
+            "type": "pizza",
+            "name": "Салямі",
+            "image": "./img/pizza-card.jpg",
+            "contain": "Томати пелаті, моцарела, подвійна салямі",
+            "size": "32см.",
+            "weight": 520,
+            "price": 124
+        },
+
+        {
+            "id": "vare2",
+            "type": "pizza",
+            "name": "Прошуто",
+            "image": "./img/pizza-card.jpg",
+            "contain": "Вершковий соус, моцарела, шинка, печериці",
+            "size": "32см.",
+            "weight": 520,
+            "price": 127
+        },
+
+        {
+            "id": "vare3",
+            "type": "pizza",
+            "name": "Маргарита",
+            "image": "./img/pizza-card.jpg",
+            "contain": "Томати пелаті, моцарела, пармезан, свіжий базилік, трюфельна оливкова олія",
+            "size": "32см.",
+            "weight": 485,
+            "price": 131
+        },
+
+        {
+            "id": "vare4",
+            "type": "pizza",
+            "name": "Гавайська",
+            "image": "./img/pizza-card.jpg",
+            "contain": "Вершковий соус, моцарела, ананас, курка, кукурудза",
+            "size": "32см.",
+            "weight": 560,
+            "price": 136
+        },
+
+        {
+            "id": "vare5",
+            "type": "pizza",
+            "name": "Пепероні",
+            "image": "./img/pizza-card.jpg",
+            "contain": "Томати пелаті, моцарела, подвійна салямі пепероні",
+            "size": "32см.",
+            "weight": 560,
+            "price": 136
+        },
+
+        {
+            "id": "vare6",
+            "type": "pizza",
+            "name": "Вегетеріана",
+            "image": "./img/pizza-card.jpg",
+            "contain": "Томати пелаті, моцарела, печериці, оливки, солодкий перець, рукола",
+            "size": "32см.",
+            "weight": 560,
+            "price": 136
+        },
+
+        {
+            "id": "vare7",
+            "type": "pizza",
+            "name": "Діабола",
+            "image": "./img/pizza-card.jpg",
+            "contain": "Томати пелаті, моцарелла, салямі пепероні, перець чилі, оливки, синя цибуля",
+            "size": "32см.",
+            "weight": 570,
+            "price": 151
+        },
+
+        {
+            "id": "vare8",
+            "type": "pizza",
+            "name": "Кальцоне",
+            "image": "./img/pizza-card.jpg",
+            "contain": "Вершковий соус, моцарела, шинка, печериці, томати",
+            "size": "32см.",
+            "weight": 560,
+            "price": 147
+        },
+
+        {
+            "id": "vare9",
+            "type": "pizza",
+            "name": "Провінціа",
+            "image": "./img/pizza-card.jpg",
+            "contain": "Вершковий соус, моцарела, баварські ковбаски, огірки корнішони, помідори чері",
+            "size": "32см.",
+            "weight": 560,
+            "price": 136
+        },
+
+        {
+            "id": "vare10",
+            "type": "sushi",
+            "name": "Сет Макі",
+            "image": "./img/sushi-card.jpg",
+            "contain": "Макі лосось, макі вугор, макі креветка, макі краб, макі авокадо, макі огірок",
+            "size": "18шт.",
+            "weight": 330,
+            "price": 190
+        },
+
+        {
+            "id": "vare11",
+            "type": "sushi",
+            "name": "Сет Соло",
+            "image": "./img/sushi-card.jpg",
+            "contain": "Філадельфія рейнбоу, макі краб, нігірі вугор, нігірі лосось, нігірі креветка",
+            "size": "9шт.",
+            "weight": 250,
+            "price": 200
+        },
+
+        {
+            "id": "vare12",
+            "type": "sushi",
+            "name": "Сет Лосось",
+            "image": "./img/sushi-card.jpg",
+            "contain": "Філадельфія лосось, макі лосось, нігірі лосось х2",
+            "size": "9шт.",
+            "weight": 270,
+            "price": 210
+        },
+
+        {
+            "id": "vare13",
+            "type": "sushi",
+            "name": "Сет Спайсі",
+            "image": "./img/sushi-card.jpg",
+            "contain": "Футо спайсі, філадельфія лайт, макі креветка, гункан лосось спайсі х2",
+            "size": "12шт.",
+            "weight": 315,
+            "price": 240
+        },
+
+        {
+            "id": "vare14",
+            "type": "sushi",
+            "name": "Сет Спайсі",
+            "image": "./img/sushi-card.jpg",
+            "contain": "Футо спайсі, філадельфія лайт, макі креветка, гункан лосось спайсі х2",
+            "size": "12шт.",
+            "weight": 315,
+            "price": 240
+        },
+
+        {
+            "id": "vare15",
+            "type": "sushi",
+            "name": "Сет Інь-Янь",
+            "image": "./img/sushi-card.jpg",
+            "contain": "Філадельфія лосось, філадельфія вугор, нігірі лосось х2, нігірі вугор х2",
+            "size": "10шт.",
+            "weight": 360,
+            "price": 330
+        }
+    ]
+}
