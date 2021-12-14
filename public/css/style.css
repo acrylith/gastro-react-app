@@ -268,6 +268,7 @@ nav .container {
 }
 .dishcard__image {
   position: relative;
+  margin-bottom: 22px;
 }
 .dishcard__image img {
   width: 100%;
@@ -357,4 +358,28 @@ nav .container {
 }
 .filter__button svg {
   margin-right: 8px;
+}
+
+.contacts__title {
+  color: white;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+.contacts__info {
+  color: white;
+}
+.contacts__info h3, .contacts__info p {
+  text-align: center;
+}
+.contacts__info a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+.contacts__info .fblink:hover {
+  color: #3b5998;
+}
+.contacts__info .instalink:hover {
+  color: #C13584;
 }
