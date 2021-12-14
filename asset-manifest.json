@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/gastro-react-app/static/js/main.0a91f0a3.chunk.js",
+    "main.js.map": "/gastro-react-app/static/js/main.0a91f0a3.chunk.js.map",
+    "runtime-main.js": "/gastro-react-app/static/js/runtime-main.fa22b9e9.js",
+    "runtime-main.js.map": "/gastro-react-app/static/js/runtime-main.fa22b9e9.js.map",
+    "static/js/2.21703b12.chunk.js": "/gastro-react-app/static/js/2.21703b12.chunk.js",
+    "static/js/2.21703b12.chunk.js.map": "/gastro-react-app/static/js/2.21703b12.chunk.js.map",
+    "index.html": "/gastro-react-app/index.html",
+    "static/js/2.21703b12.chunk.js.LICENSE.txt": "/gastro-react-app/static/js/2.21703b12.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fa22b9e9.js",
+    "static/js/2.21703b12.chunk.js",
+    "static/js/main.0a91f0a3.chunk.js"
+  ]
+}

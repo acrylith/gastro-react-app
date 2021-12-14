@@ -1,0 +1,47 @@
+@media screen and (min-width: 1600px) {
+    .big-logo {
+        margin: 120px 0 40px 0;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .heading {
+        max-height: 660px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .headtext {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .left{
+        &__button {
+            display: inline-flex;
+        }
+
+        &__item {
+            display: none;
+        }
+    }
+
+    .phone-icon {
+        display: inline-block;
+    }
+
+    .tel-number {
+        display: none;
+    }
+
+    .headtext {
+        font-size: 18px;
+    }
+
+    .cart {
+        &__list {
+            max-height: 300px;
+        }
+    }
+}
