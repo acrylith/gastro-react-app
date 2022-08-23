@@ -1,56 +1,132 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Burgermenu from "./BurgerMenu";
-import Cart from "./Cart";
+import styled from "styled-components";
+import { HiShoppingCart, HiMenu } from "react-icons/hi"
+
+const NavBar = styled.div`
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+`
+
+const Brand = styled(Link)`
+    :hover {
+        text-decoration: none;
+    }
+`
+const Nav = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    align-content: center;
+    align-items: center;
+    @media (min-width: 992px) {
+        gap: 40px;
+    }
+`
+
+const NavLink = styled(Link)`
+    color: ${props => props.theme.text};
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: all .5s;
+    :hover {
+        color: ${props => props.theme.text};
+    }
+    @media (min-width: 992px) {
+        :hover {
+            color: ${props => props.theme.focus};
+        }
+    }
+`
+
+const Links = styled.ul`
+    margin: 0;
+    padding: 0;
+    display: none;
+    gap: 40px;
+    @media (min-width: 992px) {
+        display: flex;
+    }
+`
+
+const Cart = styled(NavLink)`
+    font-size: 22px;
+`
+const MenuToggle = styled.button`
+    display: block;
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    color: ${props => props.isOpen ? props.theme.focus : props.theme.text};
+    transition: all .5s;
+    @media (min-width: 992px) {
+        display: none;
+    }
+`
+const NavComponent = styled.nav`
+    display: flex;
+    flex-direction: column;
+    max-height: ${props => props.isOpen ? "336px" : "80px"};
+    overflow-y: hidden;
+    transition: ease-in-out .4s;
+    background-color: ${props => props.theme.black};
+    @media (min-width: 992px) {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        background-color: transparent;
+    }
+`
+
+const MobLinks = styled.ul`
+    margin: 12px 42px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+`
 
 const Navbar = () => {
-    const [mobileOpen, setMobileOpen] = useState(false);
-    let [cartOpen, setCartOpen] = useState(false);
+    const [burgerOpen, setBurgerOpen] = useState(false)
+
+    const burgerToggle = () => {
+        if (burgerOpen === false) {
+            setBurgerOpen(true)
+        } else setBurgerOpen(false)
+    }
+
     return(
-        <nav>
-            <Burgermenu open={mobileOpen} onClose={() => setMobileOpen(false)}/>
+        <NavComponent isOpen={burgerOpen}>
             <div className="container">
-                <ul className="left">
-                    <li className="left__button">
-                        <button className="modal__open" onClick={() => setMobileOpen(true)}>
-                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2 4h12v1.333H2V4Zm0 3.333h12v1.334H2V7.333Zm0 3.334h12V12H2v-1.333Z" fill="#fff"/>
-                            </svg>
-                        </button>
-                    </li>
-                    <li className="home">
-                        <Link to="/" className="left__link"><img src="./img/gastro-logo-small.png" alt="gastro-logo-small"/></Link>
-                    </li>
-
-                    <li className="left__item">
-                        <Link to="/menu" href="#" className="left__link">Меню</Link>
-                    </li>
-                    
-                    <li className="left__item">
-                        <Link to="/contacts" className="left__link">Контакти</Link>
-                    </li>
-                </ul>
-
-                <ul className="right">
-                    <li className="right__item carticon">
-                        <button id="cart-btn" onClick={() => setCartOpen(true)}>
-                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2.5 2a.5.5 0 1 0 0 1h.246a.5.5 0 0 1 .48.363l1.586 5.55A1.5 1.5 0 0 0 6.254 10h4.569a1.5 1.5 0 0 0 1.393-.943l1.474-3.686A1 1 0 0 0 12.762 4H4.448l-.261-.912A1.5 1.5 0 0 0 2.746 2H2.5Zm3.274 6.637L4.734 5h8.027l-1.474 3.686a.5.5 0 0 1-.464.314H6.254a.5.5 0 0 1-.48-.363ZM6.5 14a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm0-1a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1ZM10.5 14a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm0-1a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1Z" fill="#fff"/>
-                            </svg>
-                        </button>
-                    </li>
-                    <li className="right__item tel">
-                        <a href="tel:+380600000000">
-                            <svg className="phone-icon" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13 14.5h-.085C3.09 13.935 1.695 5.645 1.5 3.115A1.5 1.5 0 0 1 2.88 1.5h2.755a1 1 0 0 1 .93.63L7.325 4a1 1 0 0 1-.22 1.08L6.04 6.155a4.685 4.685 0 0 0 3.79 3.8l1.085-1.075A1 1 0 0 1 12 8.675l1.885.755a1 1 0 0 1 .615.93V13a1.5 1.5 0 0 1-1.5 1.5ZM3 2.5a.5.5 0 0 0-.5.5v.04C2.73 6 4.205 13 12.97 13.5a.5.5 0 0 0 .53-.47v-2.67l-1.885-.755-1.435 1.425-.24-.03C5.59 10.455 5 6.105 5 6.06l-.03-.24 1.42-1.435L5.64 2.5H3Z" fill="#fff"/>
-                            </svg>
-                            <span className="tel-number">+38 (060) 000 0000</span>
-                        </a>
-                    </li>
-                </ul>
+                <NavBar>
+                    <Brand to="/"><img src="./img/gastro-logo-small.svg" alt="brand" /></Brand>
+                    <Nav>
+                        <Links>
+                            <NavLink to="/">Home</NavLink>
+                            <NavLink to="/menu">Menu</NavLink>
+                            <NavLink to="/">Services</NavLink>
+                            <NavLink to="/">Blog</NavLink>
+                            <NavLink to="/">About</NavLink>
+                            <NavLink to="/contacts">Contacts</NavLink>
+                        </Links>
+                        <Cart to="/"><HiShoppingCart /></Cart>
+                        <MenuToggle onClick={() => burgerToggle()} isOpen={burgerOpen}><HiMenu /></MenuToggle>
+                    </Nav>
+                </NavBar>
             </div>
-            <Cart open={cartOpen} onClose={() => setCartOpen(false)}/>
-        </nav>
+            <MobLinks>
+                <NavLink to="/">Home</NavLink>
+                <NavLink to="/menu">Menu</NavLink>
+                <NavLink to="/">Services</NavLink>
+                <NavLink to="/">Blog</NavLink>
+                <NavLink to="/">About</NavLink>
+                <NavLink to="/contacts">Contacts</NavLink>
+            </MobLinks>
+        </NavComponent>
     )
 }
 

@@ -1,11 +1,18 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import {
     Col
 } from 'react-bootstrap'
-
+import { vareAdd } from '../redux/slices/cartSlice';
 
 
 const Vare = (props) => {
+    const dispatch = useDispatch()
+
+    const addToRedux = (id) => {
+        dispatch(vareAdd(id))
+    }
+    
     return (
         <Col md={6} xl={4}>
             <div className="dishcard">
@@ -29,6 +36,7 @@ const Vare = (props) => {
                         <div className="buy__size">
                             <p>₴{props.details.price}</p>
                             <button className="buy__add" onClick={() => {props.addtoorder(props.index);}}><span className="rotate">+</span>В кошик</button>
+                            <button onClick={() => addToRedux(props.index)}>add to redux</button>
                         </div>
                     </div>
                 </div>

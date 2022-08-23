@@ -1,37 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/database';
-import ReactDOM from 'react-dom';
-
+import React from 'react';
+import { createRoot } from 'react-dom/client'
 import App from './App';
-
-import firebaseConfig from './base';
-
-import OrderContext from './context';
+import { Provider } from 'react-redux';
+import { store } from './redux/store'
 
 function Main() {
-  let [vares, setVares]= useState({});
-  let [order, setOrder] = useState({});
-
-  useEffect(() => {
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.database();
-    db.ref('/vares/').on('value', snapshot => {
-      const data = snapshot.val();
-      setVares(data);
-    });// eslint-disable-next-line
-  }, []);
-
   return(
     <React.StrictMode>
-      <OrderContext.Provider value={{orders:{order, setOrder}, vare:{vares, setVares}}}>
-        <App/>
-      </OrderContext.Provider>
+      <Provider store={store}>
+          <App/>
+      </Provider>
     </React.StrictMode>
   )
 }
 
-ReactDOM.render(
-  <Main/>,
-  document.getElementById('root')
-);
+const root = createRoot(document.getElementById('root'))
+root.render(<Main/>)
