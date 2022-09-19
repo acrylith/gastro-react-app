@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { HiShoppingCart, HiMenu } from "react-icons/hi"
 
-const NavBar = styled.div`
+const NavBar = styled.header`
     height: 80px;
     display: flex;
     justify-content: space-between;
@@ -72,13 +72,22 @@ const NavComponent = styled.nav`
     flex-direction: column;
     max-height: ${props => props.isOpen ? "336px" : "80px"};
     overflow-y: hidden;
-    transition: ease-in-out .4s;
+    transition: max-height .4s;
     background-color: ${props => props.theme.black};
+    /* ${props => props.path === `${process.env.PUBLIC_URL}` ? `
+        @media (min-width: 992px) {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        background-color: transparent;
+        box-shadow: 0 0 2px 0 #f7f7f7;
+    }` : null} */
     @media (min-width: 992px) {
         position: absolute;
         z-index: 2;
         width: 100%;
         background-color: transparent;
+        box-shadow: 0 0 2px 0 #f7f7f7;
     }
 `
 
@@ -103,28 +112,28 @@ const Navbar = () => {
         <NavComponent isOpen={burgerOpen}>
             <div className="container">
                 <NavBar>
-                    <Brand to="/"><img src="./img/gastro-logo-small.svg" alt="brand" /></Brand>
+                    <Brand to="/gastro-react-app"><img src="./img/gastro-logo-small.svg" alt="brand" /></Brand>
                     <Nav>
                         <Links>
-                            <NavLink to="/">Home</NavLink>
-                            <NavLink to="/menu">Menu</NavLink>
-                            <NavLink to="/">Services</NavLink>
-                            <NavLink to="/">Blog</NavLink>
-                            <NavLink to="/">About</NavLink>
-                            <NavLink to="/contacts">Contacts</NavLink>
+                            <NavLink to="/gastro-react-app">Home</NavLink>
+                            <NavLink to="menu">Menu</NavLink>
+                            <NavLink to="services">Services</NavLink>
+                            <NavLink to="/gastro-react-app">Blog</NavLink>
+                            <NavLink to="about">About</NavLink>
+                            <NavLink to="contacts">Contacts</NavLink>
                         </Links>
-                        <Cart to="/"><HiShoppingCart /></Cart>
+                        <Cart to="cart"><HiShoppingCart /></Cart>
                         <MenuToggle onClick={() => burgerToggle()} isOpen={burgerOpen}><HiMenu /></MenuToggle>
                     </Nav>
                 </NavBar>
             </div>
             <MobLinks>
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="/menu">Menu</NavLink>
-                <NavLink to="/">Services</NavLink>
-                <NavLink to="/">Blog</NavLink>
-                <NavLink to="/">About</NavLink>
-                <NavLink to="/contacts">Contacts</NavLink>
+                <NavLink to="/gastro-react-app">Home</NavLink>
+                <NavLink to="menu">Menu</NavLink>
+                <NavLink to="services">Services</NavLink>
+                <NavLink to="/gastro-react-app">Blog</NavLink>
+                <NavLink to="/gastro-react-app">About</NavLink>
+                <NavLink to="contacts">Contacts</NavLink>
             </MobLinks>
         </NavComponent>
     )

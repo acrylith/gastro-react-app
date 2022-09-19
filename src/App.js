@@ -1,18 +1,14 @@
 import React from 'react';
-
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route
-// } from 'react-router-dom';
 import { Routes, BrowserRouter as Router, Route } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
 
 import Home from './pages/Home';
 import Menu from './pages/Menu';
 import Contacts from './pages/Contacts';
-
-import Navbar from './components/Navbar';
-import { ThemeProvider } from 'styled-components';
+import Cart from './pages/Cart';
+import Layout from './pages/Layout';
+import Services from './pages/Services';
+import About from './pages/About';
 
 const theme = {
   text: "#e6e6e6",
@@ -21,24 +17,21 @@ const theme = {
   black: "#121212"
 }
 
-const grid = {
-  sm: "576px",
-  md: "768px",
-  lg: "992px",
-  xl: "1200px",
-  xxl: "1400px"
-}
-
 const App = () => {
   return (
-    <ThemeProvider theme={theme} grid={grid}>
+    <ThemeProvider theme={theme}>
       <Router>
         <div className='App'>
-          <Navbar />
           <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/Menu" element={<Menu/>} />
-            <Route path="/Contacts" element={<Contacts/>} />
+            <Route path='/gastro-react-app' element={<Layout/>}>
+              <Route index element={<Home />} />
+              {/* <Route path="/" element={<Navigate to="/gastro-react-app" />} /> */}
+              <Route path="menu" element={<Menu/>} />
+              <Route path="services" element={<Services />} />
+              <Route path="about" element={<About />} />
+              <Route path="contacts" element={<Contacts/>} />
+              <Route path="cart" element={<Cart/>} />
+            </Route>
           </Routes>
         </div>
       </Router>

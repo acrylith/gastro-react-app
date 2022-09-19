@@ -1,19 +1,29 @@
 import React from "react";
+import Advantages from "../components/landing/Advantages";
+import Feedback from "../components/landing/Feedback";
+import Heading from "../components/landing/Heading";
+import Map from "../components/landing/Map";
+import MenuDiscover from "../components/landing/MenuDiscover";
+import Products from "../components/Products";
+import Schedule from "../components/landing/Schedule";
+import Stars from "../components/landing/Stars";
+import Story from "../components/landing/Story";
 
-import Heading from "../components/Heading";
-import Schedule from "../components/Schedule";
-import Story from "../components/Story";
-
-class Home extends React.Component {
-    render() {
-        return(
-            <div className="home">
-                <Heading/>
-                <Schedule />
-                <Story />
-            </div>
-        )
-    }
+const Home = () => {
+    document.title = "Gastro | Home"
+    return(
+        <div className="home">
+            <Heading/>
+            <Schedule />
+            <Story />
+            <Advantages />
+            <MenuDiscover />
+            <Stars />
+            <Products loc="home" />
+            <Feedback />
+            <Map />
+        </div>
+    )
 }
 
 export default Home
