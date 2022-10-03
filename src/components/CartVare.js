@@ -70,7 +70,7 @@ export default function CartVare(props) {
     }
 
     return (
-        <Vare key={id}>
+        <Vare>
             <td className='vare-remove'><button onClick={() => remove(id)}>&#215;</button></td>
             <td className='vare-img'>
                 <img src={image} alt={name} />

@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import useOnScreen from '../../hooks/useOnScreen'
 
 const Menu = styled.section`
     background-image: url('./img/wood-bg.jpg');
@@ -43,18 +44,18 @@ const Menu = styled.section`
     img {
         width: 100%;
     }
-    .masonry {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2em;
-        margin-top: 2rem;
-        @media (min-width: 768px) {
-            gap: 0;
-            justify-content: space-between;
-        }
-        @media (min-width: 992px) {
-            margin: 0;
-        }
+`
+const Masonry = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-top: 2rem;
+    @media (min-width: 768px) {
+        gap: 0;
+        justify-content: space-between;
+    }
+    @media (min-width: 992px) {
+        margin: 0;
     }
     .mItem {
         width: 100%;
@@ -62,16 +63,18 @@ const Menu = styled.section`
             width: calc(25% - 1em);
         }
         @media (min-width: 992px) {
+            transition: all 1s;
             width: calc(50% - 1em);
             &:nth-child(odd) {
-            margin-bottom: 2em;
+                ${props => props.visible ? 'margin-bottom: 2em;' : null}
             }
             &:nth-child(even) {
-                margin-top: 2em;
+                ${props => props.visible ? 'margin-top: 2em;' : null}
             }
         }
     }
 `
+
 const MenuLink = styled(Link)`
     text-decoration: none;
     font-size: 14px;
@@ -86,6 +89,8 @@ const MenuLink = styled(Link)`
 `
 
 export default function MenuDiscover() {
+    const masonryRef = useRef()
+    const mVisible = useOnScreen(masonryRef, "-60px")
     return (
         <Menu>
             <div className='container'>
@@ -101,7 +106,7 @@ export default function MenuDiscover() {
                         </div>
                     </div>
                     <div className='col-lg-6'>
-                        <div className='masonry'>
+                        <Masonry visible={mVisible} ref={masonryRef}>
                             <div className='mItem'>
                                 <img src='./img/galler-pizza01.jpg' alt='pizza01' />
                             </div>
@@ -114,7 +119,7 @@ export default function MenuDiscover() {
                             <div className='mItem'>
                                 <img src='./img/galler-pizza05.jpg' alt='pizza04' />
                             </div>
-                        </div>
+                        </Masonry>
                     </div>
                 </div>
             </div>

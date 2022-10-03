@@ -1,7 +1,9 @@
 import React from 'react'
+import { slideInLeft, slideOutLeft } from 'react-animations'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import styled, { keyframes } from 'styled-components'
 import CartVare from '../components/CartVare'
 
 const CartSection = styled.section`
@@ -65,7 +67,15 @@ const THead = styled.thead`
         text-align: center;
     }
 `
+const addAnimation = keyframes`${slideInLeft}`
+const removeAnimation = keyframes`${slideOutLeft}`
 const Body = styled.tbody`
+    .transition-enter-active {
+        animation: .3s ${addAnimation};
+    }
+    .transition-exit-active {
+        animation: .3s ${removeAnimation};
+    }
     h5 {
         text-align: center;
         margin: 1.5em 0;
@@ -98,16 +108,23 @@ export default function Cart() {
                                     <th>Total</th>
                                 </tr>
                             </THead>
-                            <Body>
+                            <TransitionGroup component={Body}>
                                 {
-                                    list.length > 0 ? list.map(item => <CartVare key={item.id} vare={item} />) : 
-                                    <tr>
-                                        <td colSpan="5">
-                                            <h5>Cart is Empty</h5>
-                                        </td>
-                                    </tr>
+                                    list.length > 0 ? list.map(item =>
+                                        <CSSTransition  key={item.id} timeout={300} classNames="transition">
+                                            <CartVare vare={item} />
+                                        </CSSTransition>
+                                    ) : 
+                                    <CSSTransition timeout={300} classNames="transition">
+                                        <tr>
+                                            <td colSpan="5">
+                                                <h5>Cart is Empty</h5>
+                                            </td>
+                                        </tr>
+                                    </CSSTransition>
+                                    
                                 }
-                            </Body>
+                            </TransitionGroup>
                         </Table>
                     </div>
                 </div>

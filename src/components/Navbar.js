@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { HiShoppingCart, HiMenu } from "react-icons/hi"
+import { useSelector } from "react-redux";
 
 const NavBar = styled.header`
     height: 80px;
@@ -55,6 +56,17 @@ const Links = styled.ul`
 
 const Cart = styled(NavLink)`
     font-size: 22px;
+    position: relative;
+    span {
+        position: absolute;
+        top: -0.5em;
+        right: -1em;
+        font-size: 10px;
+        background-color: ${props => props.theme.focus};
+        border-radius: 50%;
+        padding: 0 0.5em;
+        color: ${props => props.theme.text} !important;
+    }
 `
 const MenuToggle = styled.button`
     display: block;
@@ -74,14 +86,6 @@ const NavComponent = styled.nav`
     overflow-y: hidden;
     transition: max-height .4s;
     background-color: ${props => props.theme.black};
-    /* ${props => props.path === `${process.env.PUBLIC_URL}` ? `
-        @media (min-width: 992px) {
-        position: absolute;
-        z-index: 2;
-        width: 100%;
-        background-color: transparent;
-        box-shadow: 0 0 2px 0 #f7f7f7;
-    }` : null} */
     @media (min-width: 992px) {
         position: absolute;
         z-index: 2;
@@ -101,6 +105,7 @@ const MobLinks = styled.ul`
 
 const Navbar = () => {
     const [burgerOpen, setBurgerOpen] = useState(false)
+    const cartLength = useSelector(state => state.cart.list).length
 
     const burgerToggle = () => {
         if (burgerOpen === false) {
@@ -118,11 +123,15 @@ const Navbar = () => {
                             <NavLink to="/gastro-react-app">Home</NavLink>
                             <NavLink to="menu">Menu</NavLink>
                             <NavLink to="services">Services</NavLink>
-                            <NavLink to="/gastro-react-app">Blog</NavLink>
                             <NavLink to="about">About</NavLink>
                             <NavLink to="contacts">Contacts</NavLink>
                         </Links>
-                        <Cart to="cart"><HiShoppingCart /></Cart>
+                        <Cart to="cart">
+                            <HiShoppingCart />
+                            {
+                                cartLength > 0 ? <span>{cartLength}</span> : null
+                            }
+                        </Cart>
                         <MenuToggle onClick={() => burgerToggle()} isOpen={burgerOpen}><HiMenu /></MenuToggle>
                     </Nav>
                 </NavBar>
@@ -131,7 +140,6 @@ const Navbar = () => {
                 <NavLink to="/gastro-react-app">Home</NavLink>
                 <NavLink to="menu">Menu</NavLink>
                 <NavLink to="services">Services</NavLink>
-                <NavLink to="/gastro-react-app">Blog</NavLink>
                 <NavLink to="/gastro-react-app">About</NavLink>
                 <NavLink to="contacts">Contacts</NavLink>
             </MobLinks>
