@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/gastro-react-app/static/js/main.f6832b9e.js",
+    "main.js": "/gastro-react-app/static/js/main.b3ebcfcd.js",
     "index.html": "/gastro-react-app/index.html",
-    "main.f6832b9e.js.map": "/gastro-react-app/static/js/main.f6832b9e.js.map"
+    "main.b3ebcfcd.js.map": "/gastro-react-app/static/js/main.b3ebcfcd.js.map"
   },
   "entrypoints": [
-    "static/js/main.f6832b9e.js"
+    "static/js/main.b3ebcfcd.js"
   ]
 }
